@@ -48,7 +48,7 @@ function setData(location, lat, lon){ // generate data view
     $('.equipment-name').html(location);
     $(".data-body").html(default_data);
     setTimeout(function() {
-        $(".data-body").load("dataview.php");
+        $(".data-body").load("src/dataview.php");
     }, 1000);
     var i = 0
     var j = 0

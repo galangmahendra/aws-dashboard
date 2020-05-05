@@ -4,7 +4,7 @@ if(empty($_SESSION["nickname"])) {
   header("Location: login");
 }
 $nickname = $_SESSION["nickname"];
-include('data.php');
+include('src/data.php');
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ include('data.php');
               <i class="fas fa-wrench fa-fw"></i>Change username</a>
             <a class=dropdown-item href="#" data-toggle=modal data-target=#alter-password>
               <i class="fas fa-eraser fa-fw"></i>Change password</a>
-            <a class=dropdown-item href="logout"> <i class="fas fa-sign-out-alt fa-fw"></i>Sign out</a>
+            <a class=dropdown-item href="auth/logout"> <i class="fas fa-sign-out-alt fa-fw"></i>Sign out</a>
           </div>
         </li>
       </ul>

@@ -6,5 +6,5 @@ if(empty($_SESSION["nickname"])) {
 if(!empty($_POST["nickname"])) {
   $_SESSION["nickname"] = $_POST["nickname"];
 }
-header("Location: index");
+header("Location: ../index");
 ?>

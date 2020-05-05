@@ -18,7 +18,7 @@
             <h2 class="col">Sign in</h2>
           </div>
           <div class="row">
-            <form action="auth.php" method="POST" class="col">
+            <form action="auth/auth" method="POST" class="col">
               <div class="form-group form-row">
                 <div class="col">
                   <input type="text" class="form-control" placeholder="Nickname*" id="username" name="nickname" value="" required>
