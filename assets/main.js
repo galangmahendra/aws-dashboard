@@ -30,6 +30,7 @@ function initMap() {
 
 function showHide() { // show / hide data view table
     $('.showhide-data>i').toggleClass('fa-chevron-down fa-chevron-up')
+    $('body').toggleClass('overflow-hidden')
     
     if($('.page-data').hasClass('up')) {
         var total_h = $(window).height();
@@ -43,6 +44,7 @@ function showHide() { // show / hide data view table
 }
 
 function setData(location, lat, lon){ // generate data view
+    unsetChart();
     $('.equipment-name').html(location);
     $(".data-body").html(default_data);
     setTimeout(function() {
@@ -74,4 +76,49 @@ function setData(location, lat, lon){ // generate data view
     marker.addListener('click', function() {
         infowindow.open(this.getMap(), this);
     });
+}
+
+function unsetChart() {
+    $('#dataview-chart').hide();
+    $('.dataview-list').show();
+    $('.btn-datalist').addClass('active');
+    $('.btn-datachart').removeClass('active');
+}
+
+function setChart(param, alias) {
+    $('.dataview-list').hide();
+    $('#dataview-chart').css('width', $('.dataview-container').width() + 'px').show();
+    $('.btn-datalist').removeClass('active');
+    $('.btn-datachart').addClass('active');
+
+    var times = [];
+    var values = [];
+    $( ".val-time" ).each(function( index ) {
+        //console.log( index + ": " + $( this ).text() );
+        times.push($(this).text())
+    });
+    $( ".val-" + alias ).each(function( index ) {
+        //console.log( index + ": " + $( this ).text() );
+        values.push($(this).text())
+    });
+    var option = {
+        title: {
+            text: param
+        },
+        tooltip: {},
+        legend: {
+            data:['value']
+        },
+        xAxis: {
+            data: times.reverse()
+        },
+        yAxis: {},
+        series: [{
+            name: param,
+            type: 'line',
+            data: values.reverse()
+        }]
+    };
+    var chartDiv = document.getElementById('dataview-chart');
+    echarts.init(chartDiv).setOption(option)
 }

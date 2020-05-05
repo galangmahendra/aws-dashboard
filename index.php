@@ -152,35 +152,35 @@ include('data.php');
             <tbody>
               <tr>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-pm2">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">PM2.5(ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-pm10">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">PM10(ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-so2">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">SO2(PPB)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-no2">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">NO2(PPB)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-co">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">CO(PPM)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-o3">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">O3(PPB)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-ispu">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">ISPU</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val val-rem">-</h1>
+                  <h1 class="data-val ">-</h1>
                   <small class="text-param">Rem</small>
                 </td>
               </tr>
@@ -268,56 +268,57 @@ include('data.php');
           <div class="modal-title">
             <h5>Data View</h5>
             <p class="modal-equipment-name">Equipment name: <span class="equipment-name"></span></p>
-            <!-- <button class="btn btn-secondary" type="button" onclick="$('#dataview-chart').hide();$('#dataview-list').show()">Data List</button>
+            <button class="btn btn-outline-secondary btn-datalist active" type="button" onclick="unsetChart()">Data List</button>
             <div class="dropdown d-inline">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+              <button class="btn btn-outline-secondary btn-datachart dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
                 Data Chart
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#" onclick="setChart()">PM2.5(ug/m3)</a>
-                <a class="dropdown-item" href="#">PM10(ug/m3)</a>
-                <a class="dropdown-item" href="#">SO2(PPB)</a>
-                <a class="dropdown-item" href="#">NO2(PPB)</a>
-                <a class="dropdown-item" href="#">CO(PPM)</a>
-                <a class="dropdown-item" href="#">O3(PPB)</a>
-                <a class="dropdown-item" href="#">ISPU</a>
-                <a class="dropdown-item" href="#">Rem</a>
-                <a class="dropdown-item" href="#">T(℃)</a>
-                <a class="dropdown-item" href="#">RH(%)</a>
-                <a class="dropdown-item" href="#">NOISE(dB)</a>
-                <a class="dropdown-item" href="#">ATM(kPa)</a>
-                <a class="dropdown-item" href="#">WS(m/s)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM2.5(ug/m3)','pm2')">PM2.5(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM10(ug/m3)','pm10')">PM10(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('SO2(PPB)','so2')">SO2(PPB)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('NO2(PPB)','no2')">NO2(PPB)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('CO(PPM)','co')">CO(PPM)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('O3(PPB)','o3')">O3(PPB)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('ISPU','ispu')">ISPU</a>
+                <!-- <a class="dropdown-item" href="#">Rem</a> -->
+                <a class="dropdown-item" href="#" onclick="setChart('T(℃)','t')">T(℃)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('RH(%)','rh')">RH(%)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('NOISE(dB)','noise')">NOISE(dB)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('ATM(kPa)','atm')">ATM(kPa)</a>
+                <!-- <a class="dropdown-item" href="#">WS(m/s)</a>
                 <a class="dropdown-item" href="#">WD(°)</a>
-                <a class="dropdown-item" href="#">PRCP(mm)</a>
+                <a class="dropdown-item" href="#">PRCP(mm)</a> -->
               </div>
-            </div> -->
+            </div>
           </div>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
-        <div class="modal-body scroll-wrap">
-        <table class="table big-table mr-20 dataview-list">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col" class="time">Time</th>
-              <th scope="col" class="c1">PM2.5(ug/m3)</th>
-              <th scope="col" class="c2">PM10(ug/m3)</th>
-              <th scope="col" class="c3">SO2(PPB)</th>
-              <th scope="col" class="c4">NO2(PPB)</th>
-              <th scope="col" class="c5">CO(PPM)</th>
-              <th scope="col" class="c6">O3(PPB)</th>
-              <th scope="col" class="c7">ISPU</th>
-              <th scope="col" class="c8">Rem</th>
-              <th scope="col" class="c9">T(℃)</th>
-              <th scope="col" class="c10">RH(%)</th>
-              <th scope="col" class="c11">NOISE(dB)</th>
-              <th scope="col" class="c12">ATM(kPa)</th>
-              <th scope="col" class="c13">WS(m/s)</th>
-              <th scope="col" class="c14">WD(°)</th>
-              <th scope="col" class="c15">PRCP(mm)</th>
-            </tr>
-          </thead>
-          <tbody class="table-striped table-hover data-body">
-          </tbody>
+        <div class="modal-body scroll-wrap text-center dataview-container">
+          <div id="dataview-chart" style="height:400px;min-width:400px;display:none"></div>
+          <table class="table big-table mr-20 dataview-list">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="time">Time</th>
+                <th scope="col" class="c1">PM2.5(ug/m3)</th>
+                <th scope="col" class="c2">PM10(ug/m3)</th>
+                <th scope="col" class="c3">SO2(PPB)</th>
+                <th scope="col" class="c4">NO2(PPB)</th>
+                <th scope="col" class="c5">CO(PPM)</th>
+                <th scope="col" class="c6">O3(PPB)</th>
+                <th scope="col" class="c7">ISPU</th>
+                <th scope="col" class="c8">Rem</th>
+                <th scope="col" class="c9">T(℃)</th>
+                <th scope="col" class="c10">RH(%)</th>
+                <th scope="col" class="c11">NOISE(dB)</th>
+                <th scope="col" class="c12">ATM(kPa)</th>
+                <th scope="col" class="c13">WS(m/s)</th>
+                <th scope="col" class="c14">WD(°)</th>
+                <th scope="col" class="c15">PRCP(mm)</th>
+              </tr>
+            </thead>
+            <tbody class="table-striped table-hover data-body">
+            </tbody>
           </table>
         </div>
         <div class="modal-footer">
@@ -361,10 +362,12 @@ include('data.php');
   </div>
 
   <script src="assets/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.staticfile.org/datepicker/0.6.5/datepicker.min.js"></script>
+  <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu9-9wDg-qNZJ1pyhIMzF306E6roCoKMw&callback=initMap"></script>
   <script src="assets/main.js"></script>
   

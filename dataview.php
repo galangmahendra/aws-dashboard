@@ -1,16 +1,16 @@
 <?php 
 date_default_timezone_set('Asia/Jakarta');
-$temp = 27; // start value
-$noise = 44; // start value
+$temp = 32; // start value / latest value
+$temp_interval = [-0.3,-0.2,-0.1,0,0.1];
+$noise = 44; // start value / latest value
+$noise_interval = [-1,0,1];
 
-$date = date("Y-m-d H:i:s", strtotime("-5 minutes"));
 $dataview_total = 50;
+$date = date("Y-m-d H:i:s", strtotime("-5 minutes"));
 for( $i = 1; $i <= $dataview_total; $i++ ) {
-    
     $date = date("Y-m-d H:i:s", strtotime($date) - 30);
-    $temp = sequence($temp);
-    $noise = sequence($noise);
-
+    $temp = sequence($temp,$temp_interval);
+    $noise = sequence($noise,$noise_interval);
     $dataview[] = array(
         'time' => $date,
         'pm2' => rand(4,27),
@@ -31,28 +31,28 @@ for( $i = 1; $i <= $dataview_total; $i++ ) {
     );
 }
 
-function sequence($num) { // for sequential intervals
-    $x = [-0.1,0,0.1,0.2];
-    $index = rand(0,3);
-    $number = $num + $x[$index];
+function sequence($num,$interval) { // for sequential intervals
+    $count = count($interval) - 1;
+    $index = rand(0,$count);
+    $number = $num + $interval[$index];
     return $number;
 }
 
 foreach($dataview as $r) { ?>
     <tr>
-        <td><?php echo $r['time'] ?></td>
-        <td><?php echo $r['pm2'] ?></td>
-        <td><?php echo $r['pm10'] ?></td>
-        <td><?php echo $r['so2'] ?></td>
-        <td><?php echo $r['no2'] ?></td>
-        <td><?php echo $r['co'] ?></td>
-        <td><?php echo $r['o3'] ?></td>
-        <td><?php echo $r['ispu'] ?></td>
-        <td><?php echo $r['rem'] ?></td>
-        <td><?php echo $r['t'] ?></td>
-        <td><?php echo $r['rh'] ?></td>
-        <td><?php echo $r['noise'] ?></td>
-        <td><?php echo $r['atm'] ?></td>
+        <td class="val-time"><?php echo $r['time'] ?></td>
+        <td class="val-pm10"><?php echo $r['pm10'] ?></td>
+        <td class="val-pm2"><?php echo $r['pm2'] ?></td>
+        <td class="val-so2"><?php echo $r['so2'] ?></td>
+        <td class="val-no2"><?php echo $r['no2'] ?></td>
+        <td class="val-co"><?php echo $r['co'] ?></td>
+        <td class="val-o3"><?php echo $r['o3'] ?></td>
+        <td class="val-ispu"><?php echo $r['ispu'] ?></td>
+        <td class="val-rem"><?php echo $r['rem'] ?></td>
+        <td class="val-t"><?php echo $r['t'] ?></td>
+        <td class="val-rh"><?php echo $r['rh'] ?></td>
+        <td class="val-noise"><?php echo $r['noise'] ?></td>
+        <td class="val-atm"><?php echo $r['atm'] ?></td>
         <td>0</td>
         <td>NW</td>
         <td>0.0</td>

@@ -133,7 +133,7 @@ main {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    margin: 90px 0 56px
+    margin: 90px 0 40px; /* 90px 0 56px; */
 }
 
 main.login h2,
