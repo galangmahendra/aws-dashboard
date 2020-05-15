@@ -2,27 +2,30 @@
 $data = [
     array(
         'id' => '0000000250',
-        'name' => 'Cucak Rawun',
-        'timezone' => 'MLG',
+        'name' => 'L&Y Building',
+        'timezone' => 'SGT',
         'state' => 'Online',
-        'lat' => '-7.963131',
-        'lon' => '112.670139'
+        'lat' => '1.351082',
+        'lon' => '103.842613',
+        'btn-state' => ''
     ),
     array(
         'id' => '0755080016',
         'name' => 'Tunjungsekar',
         'timezone' => 'MLG',
-        'state' => 'Online',
+        'state' => 'Offline',
         'lat' => '-7.933378',
-        'lon' => '112.640391'
+        'lon' => '112.640391',
+        'btn-state' => 'disabled'
     ),
     array(
         'id' => '0755080026',
         'name' => 'Pakis',
         'timezone' => 'MLG',
-        'state' => 'Commisioning',
+        'state' => 'Offline',
         'lat' => '-7.948659',
-        'lon' => '112.701152'
+        'lon' => '112.701152',
+        'btn-state' => 'disabled'
     ),
     array(
         'id' => '0755080066',
@@ -30,7 +33,8 @@ $data = [
         'timezone' => 'MLG',
         'state' => 'Offline',
         'lat' => '-7.927270',
-        'lon' => '112.647763'
+        'lon' => '112.647763',
+        'btn-state' => 'disabled'
     ),
     array(
         'id' => '0755080250',
@@ -38,7 +42,8 @@ $data = [
         'timezone' => 'MLG',
         'state' => 'Offline',
         'lat' => '-7.958591',
-        'lon' => '112.641301'
+        'lon' => '112.641301',
+        'btn-state' => 'disabled'
     )
 ];
 ?>

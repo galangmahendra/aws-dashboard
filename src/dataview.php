@@ -23,11 +23,7 @@ for( $i = 1; $i <= $dataview_total; $i++ ) {
         'rem' => 'Baik',
         't' => $temp,
         'rh' => rand(43,62).'.'.rand(1,10),
-        'noise' => $noise,
-        'atm' => rand(100,101).'.'.rand(3,9),
-        'ws' => 0,
-        'wd' => 'NW',
-        'prcp' => '0.0',
+        'hc' => $noise,
     );
 }
 
@@ -51,10 +47,6 @@ foreach($dataview as $r) { ?>
         <td class="val-rem"><?php echo $r['rem'] ?></td>
         <td class="val-t"><?php echo $r['t'] ?></td>
         <td class="val-rh"><?php echo $r['rh'] ?></td>
-        <td class="val-noise"><?php echo $r['noise'] ?></td>
-        <td class="val-atm"><?php echo $r['atm'] ?></td>
-        <td>0</td>
-        <td>NW</td>
-        <td>0.0</td>
+        <td class="val-hc"><?php echo $r['hc'] ?></td>
     </tr>
 <?php } ?>

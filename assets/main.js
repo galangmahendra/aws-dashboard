@@ -1,15 +1,15 @@
 
 var map;
-var default_data = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+var default_data = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
 
 $(document).ready(function() {
     $('.datatable').DataTable();
@@ -48,7 +48,7 @@ function setData(location, lat, lon){ // generate data view
     $('.equipment-name').html(location);
     $(".data-body").html(default_data);
     setTimeout(function() {
-        $(".data-body").load("src/dataview.php");
+        $(".data-body").load("src/dataview_api.php");
     }, 1000);
     var i = 0
     var j = 0
@@ -112,7 +112,9 @@ function setChart(param, alias) {
         xAxis: {
             data: times.reverse()
         },
-        yAxis: {},
+        yAxis: {
+            max: 300,
+        },
         series: [{
             name: param,
             type: 'line',

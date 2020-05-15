@@ -14,7 +14,7 @@ include('src/data.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="assets/favicon.ico">
-  <title>Enygma DMS</title>
+  <title>Enygma AWS</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdn.staticfile.org/datepicker/0.6.5/datepicker.min.css">
@@ -161,30 +161,30 @@ include('src/data.php');
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val ">-</h1>
-                  <small class="text-param">SO2(PPB)</small>
+                  <small class="text-param">SO2(ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val ">-</h1>
-                  <small class="text-param">NO2(PPB)</small>
+                  <small class="text-param">NO2(ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val ">-</h1>
-                  <small class="text-param">CO(PPM)</small>
+                  <small class="text-param">CO(ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val ">-</h1>
-                  <small class="text-param">O3(PPB)</small>
+                  <small class="text-param">O3(ug/m3)</small>
                 </td>
+              </tr>
+              <tr>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val ">-</h1>
                   <small class="text-param">ISPU</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val ">-</h1>
-                  <small class="text-param">Rem</small>
+                  <small class="text-param">Remark</small>
                 </td>
-              </tr>
-              <tr>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val">-</h1>
                   <small class="text-param">temp(℃)</small>
@@ -195,23 +195,7 @@ include('src/data.php');
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val">-</h1>
-                  <small class="text-param">NOISE(dB)</small>
-                </td>
-                <td class="text-center" width="12.5%">
-                  <h1 class="data-val">-</h1>
-                  <small class="text-param">ATM(kPa)</small>
-                </td>
-                <td class="text-center" width="12.5%">
-                  <h1 class="data-val">-</h1>
-                  <small class="text-param">WS(m/s)</small>
-                </td>
-                <td class="text-center" width="12.5%">
-                  <h1 class="data-val">-</h1>
-                  <small class="text-param">WD(°)</small>
-                </td>
-                <td class="text-center" width="12.5%">
-                  <h1 class="data-val">-</h1>
-                  <small class="text-param">PRCP(mm)</small>
+                  <small class="text-param">HC(ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class=""></h1>
@@ -247,9 +231,9 @@ include('src/data.php');
               else $type = 'muted'; ?>
               <div class="col-lg-1 col-sm-6 text-<?php echo $type; ?> status"><?php echo $d['state'] ?></div>
               <div class="col-lg-5 col-sm-12 text-right">
-                <a href="#" class="btn btn-warning show-dataview" data-toggle="modal" data-target="#dataview" onclick="setData('<?php echo $d['name'] ?>','<?php echo $d['lat'] ?>','<?php echo $d['lon'] ?>')">
+                <button class="btn btn-warning show-dataview" <?php echo $d['btn-state'] ?> data-toggle="modal" data-target="#dataview" onclick="setData('<?php echo $d['name'] ?>','<?php echo $d['lat'] ?>','<?php echo $d['lon'] ?>')">
                   <i class="far fa-chart-bar fa-fw"></i>Data View
-                </a>
+                </button>
                 <a href="#" class="btn btn-info" data-toggle=modal data-target=#datadownload>
                   <i class="fas fa-download fa-fw"></i>Export Data</a>
               </div>
@@ -276,19 +260,15 @@ include('src/data.php');
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#" onclick="setChart('PM2.5(ug/m3)','pm2')">PM2.5(ug/m3)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('PM10(ug/m3)','pm10')">PM10(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('SO2(PPB)','so2')">SO2(PPB)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('NO2(PPB)','no2')">NO2(PPB)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('CO(PPM)','co')">CO(PPM)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('O3(PPB)','o3')">O3(PPB)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('SO2(PPB)','so2')">SO2(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('NO2(PPB)','no2')">NO2(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('CO(PPM)','co')">CO(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('O3(PPB)','o3')">O3(ug/m3)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('ISPU','ispu')">ISPU</a>
                 <!-- <a class="dropdown-item" href="#">Rem</a> -->
                 <a class="dropdown-item" href="#" onclick="setChart('T(℃)','t')">T(℃)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('RH(%)','rh')">RH(%)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('NOISE(dB)','noise')">NOISE(dB)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('ATM(kPa)','atm')">ATM(kPa)</a>
-                <!-- <a class="dropdown-item" href="#">WS(m/s)</a>
-                <a class="dropdown-item" href="#">WD(°)</a>
-                <a class="dropdown-item" href="#">PRCP(mm)</a> -->
+                <a class="dropdown-item" href="#" onclick="setChart('HC(dB)','hc')">HC(ug/m3)</a>
               </div>
             </div>
           </div>
@@ -299,22 +279,18 @@ include('src/data.php');
           <table class="table big-table mr-20 dataview-list">
             <thead class="thead-dark">
               <tr>
-                <th scope="col" class="time">Time</th>
-                <th scope="col" class="c1">PM2.5(ug/m3)</th>
-                <th scope="col" class="c2">PM10(ug/m3)</th>
-                <th scope="col" class="c3">SO2(PPB)</th>
-                <th scope="col" class="c4">NO2(PPB)</th>
-                <th scope="col" class="c5">CO(PPM)</th>
-                <th scope="col" class="c6">O3(PPB)</th>
-                <th scope="col" class="c7">ISPU</th>
-                <th scope="col" class="c8">Rem</th>
-                <th scope="col" class="c9">T(℃)</th>
-                <th scope="col" class="c10">RH(%)</th>
-                <th scope="col" class="c11">NOISE(dB)</th>
-                <th scope="col" class="c12">ATM(kPa)</th>
-                <th scope="col" class="c13">WS(m/s)</th>
-                <th scope="col" class="c14">WD(°)</th>
-                <th scope="col" class="c15">PRCP(mm)</th>
+                <th scope="col" class="time"><small>Time</small></th>
+                <th scope="col" class="c1"><small>PM2.5(ug/m3)</small></th>
+                <th scope="col" class="c2"><small>PM10(ug/m3)</small></th>
+                <th scope="col" class="c3"><small>SO2(ug/m3)</small></th>
+                <th scope="col" class="c4"><small>NO2(ug/m3)</small></th>
+                <th scope="col" class="c5"><small>CO(ug/m3)</small></th>
+                <th scope="col" class="c6"><small>O3(ug/m3)</small></th>
+                <th scope="col" class="c7"><small>ISPU</small></th>
+                <th scope="col" class="c8"><small>Rem</small></th>
+                <th scope="col" class="c9"><small>T(℃)</small></th>
+                <th scope="col" class="c10"><small>RH(%)</small></th>
+                <th scope="col" class="c11"><small>HC(ug/m3)</small></th>
               </tr>
             </thead>
             <tbody class="table-striped table-hover data-body">
