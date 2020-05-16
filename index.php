@@ -258,17 +258,17 @@ include('src/data.php');
                 Data Chart
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#" onclick="setChart('PM2.5(ug/m3)','pm2')">PM2.5(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('PM10(ug/m3)','pm10')">PM10(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('SO2(PPB)','so2')">SO2(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('NO2(PPB)','no2')">NO2(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('CO(PPM)','co')">CO(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('O3(PPB)','o3')">O3(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM2.5 (ug/m3)','pm2')">PM2.5(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM10 (ug/m3)','pm10')">PM10(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('SO2 (ug/m3)','so2')">SO2(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('NO2 (ug/m3)','no2')">NO2(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('CO (ug/m3)','co')">CO(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('O3 (ug/m3)','o3')">O3(ug/m3)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('ISPU','ispu')">ISPU</a>
                 <!-- <a class="dropdown-item" href="#">Rem</a> -->
-                <a class="dropdown-item" href="#" onclick="setChart('T(℃)','t')">T(℃)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('RH(%)','rh')">RH(%)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('HC(dB)','hc')">HC(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Temp (℃)','t')">T(℃)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('RH (%)','rh')">RH(%)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('HC (ug/m3)','hc')">HC(ug/m3)</a>
               </div>
             </div>
           </div>
