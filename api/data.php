@@ -2,7 +2,7 @@
 date_default_timezone_set('Asia/Jakarta');
 
 // include database
-include_once 'db.php';
+include_once '../config/db.php';
 
 // required headers
 header("Access-Control-Allow-Origin: *");
@@ -11,11 +11,38 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
-function sequence($num,$interval) { // for sequential intervals
-    $count = count($interval) - 1;
-    $index = rand(0,$count);
-    $number = $num + $interval[$index];
-    return $number;
+function bad_request($message) {
+    http_response_code(404);
+    echo json_encode(array("message" => $message));
+    exit;
+}
+
+// cek token
+$token = null;
+$headers = apache_request_headers();
+if(!empty($headers['Authorization'])){
+    $auth = explode(' ', $headers['Authorization']);
+    $token = $auth[1];
+    $sql = mysqli_query($mysqli, "SELECT id FROM token WHERE token = '$token'");
+    $check = mysqli_num_rows($sql);
+    if($check == 0) {
+        http_response_code(404);
+        echo json_encode(array("message" => "Invalid token"));
+        exit;
+    }
+} else {
+    http_response_code(404);
+    echo json_encode(array("message" => "Invalid token"));
+    exit;
+}
+
+$devices = ['0000000250','0755080016','0755080026','0755080066','0755080250'];
+if(empty($_GET['device'])) {
+    bad_request("Invalid request");
+} else {
+    if(!in_array($_GET['device'], $devices)) {
+        bad_request("Device not found");
+    }
 }
 
 // get data from table
