@@ -1,6 +1,6 @@
 <?php 
-//$url_api = "http://$_SERVER[HTTP_HOST]/ws-dashboard/api/data.php";
-$url_api = "http://52.221.183.208";
+//$url_api = "http://$_SERVER[HTTP_HOST]/ws-dashboard/api/data.php"; // require token
+$url_api = "http://52.221.183.208/data";
 $data = file_get_contents($url_api);
 $dataview = json_decode($data, true);
 

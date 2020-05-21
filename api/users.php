@@ -5,7 +5,7 @@ include_once '../config/db.php';
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: access");
-header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Methods: $_SERVER[REQUEST_METHOD]");
 header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $data[] = array(
             'id' => $row['id'],
             'name' => $row['name'],
-            'email' => $row['email'],
+            'username' => $row['email'],
         );
     }
     http_response_code(200);
