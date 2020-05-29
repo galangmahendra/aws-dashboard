@@ -136,7 +136,7 @@ function setChart(param, alias) {
     });
     var max_default = 300;
     if(alias == 'i-eco2') {
-        max_default = 600;
+        max_default = null;
     }
     var option = {
         title: {

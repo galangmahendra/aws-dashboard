@@ -1,6 +1,5 @@
 <?php 
-//$url_api = "http://localhost:3333/aws/iotdevice/data/1"; // local
-$url_api = "https://www.enygma.id/aws/iotdevice/data/3"; // server
+$url_api = "https://www.enygma.id/aws/iotdevice/data/3";
 $data = file_get_contents($url_api);
 $dataview = json_decode($data, true);
 
