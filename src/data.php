@@ -7,16 +7,18 @@ $data = [
         'state' => 'Online',
         'lat' => '1.351082',
         'lon' => '103.842613',
+        'scope' => 'outdoor',
         'btn-state' => ''
     ),
     array(
         'id' => '0755080016',
-        'name' => 'Tunjungsekar',
+        'name' => 'Cucak Rawun',
         'timezone' => 'MLG',
-        'state' => 'Offline',
-        'lat' => '-7.933378',
-        'lon' => '112.640391',
-        'btn-state' => 'disabled'
+        'state' => 'Online',
+        'lat' => '-7.963326',
+        'lon' => '112.670020',
+        'scope' => 'indoor',
+        'btn-state' => ''
     ),
     array(
         'id' => '0755080026',
@@ -25,6 +27,7 @@ $data = [
         'state' => 'Offline',
         'lat' => '-7.948659',
         'lon' => '112.701152',
+        'scope' => '',
         'btn-state' => 'disabled'
     ),
     array(
@@ -34,6 +37,7 @@ $data = [
         'state' => 'Offline',
         'lat' => '-7.927270',
         'lon' => '112.647763',
+        'scope' => '',
         'btn-state' => 'disabled'
     ),
     array(
@@ -43,6 +47,7 @@ $data = [
         'state' => 'Offline',
         'lat' => '-7.958591',
         'lon' => '112.641301',
+        'scope' => '',
         'btn-state' => 'disabled'
     )
 ];

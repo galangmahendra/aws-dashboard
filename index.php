@@ -150,61 +150,96 @@ include('src/data.php');
         <div style="background-color:#ffffffd1;padding:10px 5px;border-radius:.3rem;margin-right:-15px">
           <table width="100%" border="0">
             <tbody>
-              <tr>
+              <tr class="data-outdoor">
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
-                  <small class="text-param">PM2.5(ug/m3)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">PM2.5 (ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
-                  <small class="text-param">PM10(ug/m3)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">PM10 (ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
-                  <small class="text-param">SO2(ug/m3)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">SO2 (ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
-                  <small class="text-param">NO2(ug/m3)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">NO2 (ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
-                  <small class="text-param">CO(ug/m3)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">CO (ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
-                  <small class="text-param">O3(ug/m3)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">O3 (ug/m3)</small>
                 </td>
               </tr>
-              <tr>
+              <tr class="data-outdoor">
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
+                  <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">ISPU</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val ">-</h1>
+                  <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">Remark</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val">-</h1>
-                  <small class="text-param">temp(℃)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">Temp (℃)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val">-</h1>
-                  <small class="text-param">RH(%)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">RH (%)</small>
                 </td>
                 <td class="text-center" width="12.5%">
-                  <h1 class="data-val">-</h1>
-                  <small class="text-param">HC(ug/m3)</small>
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">HC (ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class=""></h1>
                   <small class="text-param"></small>
                 </td>
               </tr>
+              <tr class="data-indoor hide">
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">PM 1.0 (ug/m3)</small>
+                </td>
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">PM 2.5 (ug/m3)</small>
+                </td>
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">PM 10.0 (ug/m3)</small>
+                </td>
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">Temp (℃)</small>
+                </td>
+              </tr>
+              <tr class="data-indoor hide">
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">Hum (%)</small>
+                </td>
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">BaroPress (kPa)</small>
+                </td>
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">tVOC (ppb)</small>
+                </td>
+                <td class="text-center" width="15%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">eCO2 (ppm)</small>
+                </td>
+              </tr>
             </tbody>
           </table>
-
         </div>
       </div>
     </div>
@@ -231,7 +266,7 @@ include('src/data.php');
               else $type = 'muted'; ?>
               <div class="col-lg-1 col-sm-6 text-<?php echo $type; ?> status"><?php echo $d['state'] ?></div>
               <div class="col-lg-5 col-sm-12 text-right">
-                <button class="btn btn-warning show-dataview" <?php echo $d['btn-state'] ?> data-toggle="modal" data-target="#dataview" onclick="setData('<?php echo $d['name'] ?>','<?php echo $d['lat'] ?>','<?php echo $d['lon'] ?>')">
+                <button class="btn btn-warning show-dataview" <?php echo $d['btn-state'] ?> data-toggle="modal" data-target="#dataview" onclick="setData('<?php echo $d['name'] ?>','<?php echo $d['lat'] ?>','<?php echo $d['lon'] ?>','<?php echo $d['scope'] ?>')">
                   <i class="far fa-chart-bar fa-fw"></i>Data View
                 </button>
                 <a href="#" class="btn btn-info" data-toggle=modal data-target=#datadownload>
@@ -253,7 +288,7 @@ include('src/data.php');
             <h5>Data View</h5>
             <p class="modal-equipment-name">Equipment name: <span class="equipment-name"></span></p>
             <button class="btn btn-outline-secondary btn-datalist active" type="button" onclick="unsetChart()">Data List</button>
-            <div class="dropdown d-inline">
+            <div class="dropdown d-inline data-outdoor">
               <button class="btn btn-outline-secondary btn-datachart dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
                 Data Chart
               </button>
@@ -265,10 +300,24 @@ include('src/data.php');
                 <a class="dropdown-item" href="#" onclick="setChart('CO (ug/m3)','co')">CO(ug/m3)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('O3 (ug/m3)','o3')">O3(ug/m3)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('ISPU','ispu')">ISPU</a>
-                <!-- <a class="dropdown-item" href="#">Rem</a> -->
                 <a class="dropdown-item" href="#" onclick="setChart('Temp (℃)','t')">T(℃)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('RH (%)','rh')">RH(%)</a>
                 <a class="dropdown-item" href="#" onclick="setChart('HC (ug/m3)','hc')">HC(ug/m3)</a>
+              </div>
+            </div>
+            <div class="dropdown d-inline data-indoor hide">
+              <button class="btn btn-outline-secondary btn-datachart dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                Data Chart
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" onclick="setChart('PM 1.0 (ug/m3)','i-pm1')">PM 1.0 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM 2.5 (ug/m3)','i-pm2')">PM 2.5 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM 10.0 (ug/m3)','i-pm10')">PM 10.0 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Temperature (℃)','i-temp')">Temp (℃)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Humidity (%)','i-hum')">Hum (%)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Barometric Pressure (kPa)','i-bp')">BaroPress (kPa)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('tVOC gas CCS811 (ppb)','i-tvoc')">tVOC (ppb)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('eCO2 gas CCS811 (ppm)','i-eco2')">eCO2 (ppm)</a>
               </div>
             </div>
           </div>
@@ -278,7 +327,7 @@ include('src/data.php');
           <div id="dataview-chart" style="height:400px;min-width:400px;display:none"></div>
           <table class="table big-table mr-20 dataview-list">
             <thead class="thead-dark">
-              <tr>
+              <tr class="data-outdoor">
                 <th scope="col" class="time"><small>Time</small></th>
                 <th scope="col" class="c1"><small>PM2.5(ug/m3)</small></th>
                 <th scope="col" class="c2"><small>PM10(ug/m3)</small></th>
@@ -291,6 +340,17 @@ include('src/data.php');
                 <th scope="col" class="c9"><small>T(℃)</small></th>
                 <th scope="col" class="c10"><small>RH(%)</small></th>
                 <th scope="col" class="c11"><small>HC(ug/m3)</small></th>
+              </tr>
+              <tr class="data-indoor hide">
+                <th scope="col" class="time"><small>Time</small></th>
+                <th scope="col" class="c1"><small>PM 1.0 (ug/m3)</small></th>
+                <th scope="col" class="c2"><small>PM 2.5 (ug/m3)</small></th>
+                <th scope="col" class="c3"><small>PM 10.0 (ug/m3)</small></th>
+                <th scope="col" class="c4"><small>Temp (℃)</small></th>
+                <th scope="col" class="c5"><small>Hum (%)</small></th>
+                <th scope="col" class="c6"><small>BaroPress (kPa)</small></th>
+                <th scope="col" class="c7"><small>tVOC (ppb)</small></th>
+                <th scope="col" class="c8"><small>eCO2 (ppm)</small></th>
               </tr>
             </thead>
             <tbody class="table-striped table-hover data-body">

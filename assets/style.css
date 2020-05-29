@@ -428,6 +428,8 @@ main.register>.row>.col {
     overflow-y: scroll
 }
 
+.data-val-outdoor,
+.data-val-indoor,
 .data-val {
     margin:0;
     color: #6E6E6E;
@@ -456,4 +458,7 @@ main.register>.row>.col {
 }
 .showhide-data.down {
     margin-top: 200px !important;
+}
+.hide {
+    display: none !important;
 }

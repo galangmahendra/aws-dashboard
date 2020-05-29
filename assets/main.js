@@ -1,6 +1,7 @@
 
 var map;
-var default_data = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+var default_data = [];
+default_data['outdoor'] = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
@@ -9,7 +10,17 @@ var default_data = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>';
+default_data['indoor'] = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
+        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>';
 
 $(document).ready(function() {
     $('.datatable').DataTable();
@@ -43,25 +54,47 @@ function showHide() { // show / hide data view table
     $('.page-data').toggleClass('up down')
 }
 
-function setData(location, lat, lon){ // generate data view
+function toggleDataBanner(scope) {
+    if(scope == 'indoor') {
+        $('.data-outdoor').addClass('hide');
+        $('.data-indoor').removeClass('hide');
+    } else {
+        $('.data-indoor').addClass('hide');
+        $('.data-outdoor').removeClass('hide');
+    }
+}
+
+function setData(location, lat, lon, scope){ // generate data view
+    toggleDataBanner(scope);
     unsetChart();
-    $('.equipment-name').html(location);
-    $(".data-body").html(default_data);
-    setTimeout(function() {
-        $(".data-body").load("src/dataview_api.php");
-    }, 1000);
     var i = 0
     var j = 0
+
+    $('.equipment-name').html(location);
+    $(".data-body").html(default_data[scope]);
+    /* setTimeout(function() {
+        $(".data-body").load("src/"+scope+"_api.php");
+    }, 1000);
     setTimeout(function() {
         $(".data-body tr:first-child td").each(function() {
             const val = $( this ).html()
             if(i!=0) {
-                $('.data-val').eq(j).html(val)
+                $('.data-val-'+scope).eq(j).html(val)
                 j++
             }
             i++
         });
-    }, 1500);
+    }, 2500); */
+    $(".data-body").load("src/"+scope+"_api.php", function() {
+        $(".data-body tr:first-child td").each(function() {
+            const val = $( this ).html()
+            if(i!=0) {
+                $('.data-val-'+scope).eq(j).html(val)
+                j++
+            }
+            i++ 
+        });
+    })
 
     var infowindow = new google.maps.InfoWindow({content: 'Weather Station ' + location});
     var marker = new google.maps.Marker({
@@ -101,11 +134,15 @@ function setChart(param, alias) {
         //console.log( index + ": " + $( this ).text() );
         values.push($(this).text())
     });
+    var max_default = 300;
+    if(alias == 'i-eco2') {
+        max_default = 600;
+    }
     var option = {
         title: {
             text: param
         },
-        tooltip: {},
+        tooltip: { trigger: 'axis' },
         legend: {
             data:['value']
         },
@@ -113,7 +150,7 @@ function setChart(param, alias) {
             data: times.reverse()
         },
         yAxis: {
-            max: 300,
+            max: max_default,
         },
         series: [{
             name: param,
