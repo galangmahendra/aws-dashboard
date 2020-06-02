@@ -12,11 +12,11 @@ $data = [
     ),
     array(
         'id' => '0755080016',
-        'name' => 'Cucak Rawun',
-        'timezone' => 'MLG',
+        'name' => 'Gita Bahari',
+        'timezone' => 'JKT',
         'state' => 'Online',
-        'lat' => '-7.963326',
-        'lon' => '112.670020',
+        'lat' => '-6.3225519',
+        'lon' => '106.8249431',
         'scope' => 'indoor',
         'btn-state' => ''
     ),
