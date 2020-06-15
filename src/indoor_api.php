@@ -1,5 +1,5 @@
 <?php 
-$url_api = "https://www.enygma.id/aws/iotdevice/data/3";
+$url_api = "https://www.enygma.id/aws/iotdevice/data/4";
 $data = file_get_contents($url_api);
 $dataview = json_decode($data, true);
 
