@@ -21,10 +21,10 @@ include('src/data.php');
   <link rel=stylesheet href=https://cdn.staticfile.org/font-awesome/5.7.2/css/all.min.css>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body onload="$('.dataview-0755080016').click()">
   <div id="map-container"></div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light header--fixed" data-headroom>
-    <img src="assets/logo.png" alt="" height="30" style="margin:15px 30px 15px 0">
+    <img src="assets/arion.png" alt="PT Arion Indonesia" height="35" style="margin:13px 30px 13px 20px">
     <h1 class="navbar-brand d-none d-sm-block">DATA MANAGEMENT SYSTEM</h1>
     <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNavDropdown>
       <span class=navbar-toggler-icon></span>
@@ -266,7 +266,7 @@ include('src/data.php');
               else $type = 'muted'; ?>
               <div class="col-lg-1 col-sm-6 text-<?php echo $type; ?> status"><?php echo $d['state'] ?></div>
               <div class="col-lg-5 col-sm-12 text-right">
-                <button class="btn btn-warning show-dataview" <?php echo $d['btn-state'] ?> data-toggle="modal" data-target="#dataview" onclick="setData('<?php echo $d['name'] ?>','<?php echo $d['lat'] ?>','<?php echo $d['lon'] ?>','<?php echo $d['scope'] ?>')">
+                <button class="btn btn-warning show-dataview dataview-<?php echo $d['id'] ?>" <?php echo $d['btn-state'] ?> data-toggle="modal" data-target="#dataview" onclick="setData('<?php echo $d['name'] ?>','<?php echo $d['lat'] ?>','<?php echo $d['lon'] ?>','<?php echo $d['scope'] ?>')">
                   <i class="far fa-chart-bar fa-fw"></i>Data View
                 </button>
                 <a href="#" class="btn btn-info" data-toggle=modal data-target=#datadownload>
