@@ -24,7 +24,7 @@ include('src/data.php');
 <body onload="$('.dataview-0755080016').click()">
   <div id="map-container"></div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light header--fixed" data-headroom>
-    <img src="assets/arion.png" alt="PT Arion Indonesia" height="35" style="margin:13px 30px 13px 20px">
+  <img src="assets/logo.png" alt="Enygma" height="30" style="margin:15px 30px 15px 0">
     <h1 class="navbar-brand d-none d-sm-block">DATA MANAGEMENT SYSTEM</h1>
     <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNavDropdown>
       <span class=navbar-toggler-icon></span>
