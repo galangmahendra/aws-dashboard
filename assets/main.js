@@ -76,6 +76,10 @@ function setData(location, lat, lon, scope){ // generate data view
             i++
         });
     }, 2500); */
+    if ( $.fn.DataTable.isDataTable( '.dtable' ) ) {
+        $('.dtable').DataTable().clear().destroy()
+        $('.dtable tbody').html('<tr><td colspan="13"><div class="spinner-border" role="status"></div></td></tr>')
+    }
     $(".data-body").load("src/"+scope+"_api.php", function() {
         $(".data-body tr:first-child td").each(function() {
             const val = $( this ).html()
@@ -85,19 +89,20 @@ function setData(location, lat, lon, scope){ // generate data view
             }
             i++ 
         });
-            $('.dtable').DataTable( {
-                pageLength : 250,
-                dom: 'Bf',
-                "bFilter": false,
-                buttons: [
-                    'excelHtml5',
-                    {
-                        extend: 'pdfHtml5',
-                        orientation: 'landscape',
-                        pageSize: 'LEGAL'
-                    }
-                ]
-            } );
+        $('.dtable').DataTable( {
+            pageLength : 250,
+            dom: 'Bf',
+            "bFilter": false,
+            "aaSorting": [],
+            buttons: [
+                'excelHtml5',
+                {
+                    extend: 'pdfHtml5',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL'
+                }
+            ]
+        } );
     })
 
     var infowindow = new google.maps.InfoWindow({content: 'Weather Station ' + location});
