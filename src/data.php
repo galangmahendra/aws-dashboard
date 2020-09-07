@@ -2,11 +2,11 @@
 $data = [
     array(
         'id' => '0000000250',
-        'name' => 'L&Y Building',
-        'timezone' => 'SGT',
+        'name' => 'Arion',
+        'timezone' => 'MLG',
         'state' => 'Online',
-        'lat' => '1.351082',
-        'lon' => '103.842613',
+        'lat' => '-7.9334557',
+        'lon' => '112.6382248',
         'scope' => 'outdoor',
         'btn-state' => ''
     ),
@@ -14,11 +14,11 @@ $data = [
         'id' => '0755080016',
         'name' => 'Gita Bahari',
         'timezone' => 'JKT',
-        'state' => 'Online',
+        'state' => 'Offline',
         'lat' => '-6.3225519',
         'lon' => '106.8249431',
         'scope' => 'indoor',
-        'btn-state' => ''
+        'btn-state' => 'disabled'
     ),
     array(
         'id' => '0755080026',

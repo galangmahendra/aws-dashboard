@@ -21,11 +21,11 @@ include('src/data.php');
   <link rel=stylesheet href=https://cdn.staticfile.org/font-awesome/5.7.2/css/all.min.css>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body onload="$('.dataview-0755080016').click()">
+<body onload="$('.dataview-0000000250').click()">
   <div id="map-container"></div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light header--fixed" data-headroom>
   <img src="assets/logo.png" alt="Enygma" height="30" style="margin:15px 30px 15px 0">
-    <h1 class="navbar-brand d-none d-sm-block">DATA MANAGEMENT SYSTEM</h1>
+    <h1 class="navbar-brand d-none d-sm-block">Data Acquisition System Station</h1>
     <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNavDropdown>
       <span class=navbar-toggler-icon></span>
     </button>
@@ -130,7 +130,7 @@ include('src/data.php');
         <div class=container>
           <div class="row justify-content-between">
             <div class=col>
-              <h2 class=display-5>Data Management</h2>
+              <h2 class=display-5>Data Acquisition</h2>
             </div>
             <div class="col align-self-end">
               <p class="explain text-left">Equipment quantity: <span id=equipment-count><?php echo count($data) ?></span>
@@ -179,11 +179,7 @@ include('src/data.php');
               <tr class="data-outdoor">
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val-outdoor">-</h1>
-                  <small class="text-param">ISPU</small>
-                </td>
-                <td class="text-center" width="12.5%">
-                  <h1 class="data-val-outdoor">-</h1>
-                  <small class="text-param">Remark</small>
+                  <small class="text-param">HC (ug/m3)</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val-outdoor">-</h1>
@@ -191,11 +187,15 @@ include('src/data.php');
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val-outdoor">-</h1>
-                  <small class="text-param">RH (%)</small>
+                  <small class="text-param">Humidiy %</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class="data-val-outdoor">-</h1>
-                  <small class="text-param">HC (ug/m3)</small>
+                  <small class="text-param">WindSpeed (m/s)</small>
+                </td>
+                <td class="text-center" width="12.5%">
+                  <h1 class="data-val-outdoor">-</h1>
+                  <small class="text-param">RainIntensity (mm)</small>
                 </td>
                 <td class="text-center" width="12.5%">
                   <h1 class=""></h1>
@@ -335,11 +335,11 @@ include('src/data.php');
                 <th scope="col" class="c4"><small>NO2(ug/m3)</small></th>
                 <th scope="col" class="c5"><small>CO(ug/m3)</small></th>
                 <th scope="col" class="c6"><small>O3(ug/m3)</small></th>
-                <th scope="col" class="c7"><small>ISPU</small></th>
-                <th scope="col" class="c8"><small>Rem</small></th>
-                <th scope="col" class="c9"><small>T(℃)</small></th>
-                <th scope="col" class="c10"><small>RH(%)</small></th>
-                <th scope="col" class="c11"><small>HC(ug/m3)</small></th>
+                <th scope="col" class="c7"><small>HC(ug/m3)</small></th>
+                <th scope="col" class="c8"><small>T(℃)</small></th>
+                <th scope="col" class="c9"><small>Hum(%)</small></th>
+                <th scope="col" class="c10"><small>WindSpeed(m/s)</small></th>
+                <th scope="col" class="c11"><small>RainIntensity(mm)</small></th>
               </tr>
               <tr class="data-indoor hide">
                 <th scope="col" class="time"><small>Time</small></th>
