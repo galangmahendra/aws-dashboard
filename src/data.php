@@ -5,8 +5,8 @@ $data = [
         'name' => 'Arion',
         'timezone' => 'MLG',
         'state' => 'Online',
-        'lat' => '-7.9334557',
-        'lon' => '112.6382248',
+        'lat' => '-7.933461',
+        'lon' => '112.6404135',
         'scope' => 'outdoor',
         'btn-state' => ''
     ),
