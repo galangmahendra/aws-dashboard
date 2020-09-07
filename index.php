@@ -151,53 +151,57 @@ include('src/data.php');
           <table width="100%" border="0">
             <tbody>
               <tr class="data-outdoor">
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">PM2.5 (ug/m3)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">PM10 (ug/m3)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">SO2 (ug/m3)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">NO2 (ug/m3)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">CO (ug/m3)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">O3 (ug/m3)</small>
                 </td>
               </tr>
               <tr class="data-outdoor">
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">HC (ug/m3)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">Temp (℃)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">Humidiy %</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
+                  <h1 class="data-val-indoor">-</h1>
+                  <small class="text-param">BaroPress (kPa)</small>
+                </td>
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">WindSpeed (m/s)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class="data-val-outdoor">-</h1>
                   <small class="text-param">RainIntensity (mm)</small>
                 </td>
-                <td class="text-center" width="12.5%">
+                <td class="text-center" width="16.6%">
                   <h1 class=""></h1>
                   <small class="text-param"></small>
                 </td>
@@ -281,7 +285,7 @@ include('src/data.php');
   </main>
 
   <div class="modal fade" id="dataview">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl" style="min-width:1320px">
       <div class="modal-content scroll-out">
         <div class="modal-header">
           <div class="modal-title">
@@ -293,16 +297,18 @@ include('src/data.php');
                 Data Chart
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#" onclick="setChart('PM2.5 (ug/m3)','pm2')">PM2.5(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('PM10 (ug/m3)','pm10')">PM10(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('SO2 (ug/m3)','so2')">SO2(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('NO2 (ug/m3)','no2')">NO2(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('CO (ug/m3)','co')">CO(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('O3 (ug/m3)','o3')">O3(ug/m3)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('ISPU','ispu')">ISPU</a>
-                <a class="dropdown-item" href="#" onclick="setChart('Temp (℃)','t')">T(℃)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('RH (%)','rh')">RH(%)</a>
-                <a class="dropdown-item" href="#" onclick="setChart('HC (ug/m3)','hc')">HC(ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM2.5 (ug/m3)','pm2')">PM2.5 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('PM10 (ug/m3)','pm10')">PM10 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('SO2 (ug/m3)','so2')">SO2 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('NO2 (ug/m3)','no2')">NO2 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('CO (ug/m3)','co')">CO (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('O3 (ug/m3)','o3')">O3 (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('HC (ug/m3)','hc')">HC (ug/m3)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Temp (℃)','t')">T (℃)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Humidity (%)','hum')">H (%)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Barometric Pressure (kPa)','bp')">BaroPress (kPa)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Wind Speed (m/s)','ws')">WindSpeed (m/s)</a>
+                <a class="dropdown-item" href="#" onclick="setChart('Rain Intensity (mm)','ri')">RainInt (mm)</a>
               </div>
             </div>
             <div class="dropdown d-inline data-indoor hide">
@@ -325,33 +331,34 @@ include('src/data.php');
         </div>
         <div class="modal-body scroll-wrap text-center dataview-container">
           <div id="dataview-chart" style="height:400px;min-width:400px;display:none"></div>
-          <table class="table big-table mr-20 dataview-list">
+          <table class="table big-table mr-20 dataview-list dtable">
             <thead class="thead-dark">
               <tr class="data-outdoor">
-                <th scope="col" class="time"><small>Time</small></th>
-                <th scope="col" class="c1"><small>PM2.5(ug/m3)</small></th>
-                <th scope="col" class="c2"><small>PM10(ug/m3)</small></th>
-                <th scope="col" class="c3"><small>SO2(ug/m3)</small></th>
-                <th scope="col" class="c4"><small>NO2(ug/m3)</small></th>
-                <th scope="col" class="c5"><small>CO(ug/m3)</small></th>
-                <th scope="col" class="c6"><small>O3(ug/m3)</small></th>
-                <th scope="col" class="c7"><small>HC(ug/m3)</small></th>
-                <th scope="col" class="c8"><small>T(℃)</small></th>
-                <th scope="col" class="c9"><small>Hum(%)</small></th>
-                <th scope="col" class="c10"><small>WindSpeed(m/s)</small></th>
-                <th scope="col" class="c11"><small>RainIntensity(mm)</small></th>
+                <th class="time"><small>Time</small></th>
+                <th class="c1"><small>PM2.5(ug/m3)</small></th>
+                <th class="c2"><small>PM10(ug/m3)</small></th>
+                <th class="c3"><small>SO2(ug/m3)</small></th>
+                <th class="c4"><small>NO2(ug/m3)</small></th>
+                <th class="c5"><small>CO(ug/m3)</small></th>
+                <th class="c6"><small>O3(ug/m3)</small></th>
+                <th class="c7"><small>HC(ug/m3)</small></th>
+                <th class="c8"><small>T(℃)</small></th>
+                <th class="c9"><small>Hum(%)</small></th>
+                <th class="c10"><small>BaroPress (kPa)</small></th>
+                <th class="c11"><small>WindSpeed(m/s)</small></th>
+                <th class="c12"><small>RainIntensity(mm)</small></th>
               </tr>
-              <tr class="data-indoor hide">
-                <th scope="col" class="time"><small>Time</small></th>
-                <th scope="col" class="c1"><small>PM 1.0 (ug/m3)</small></th>
-                <th scope="col" class="c2"><small>PM 2.5 (ug/m3)</small></th>
-                <th scope="col" class="c3"><small>PM 10.0 (ug/m3)</small></th>
-                <th scope="col" class="c4"><small>Temp (℃)</small></th>
-                <th scope="col" class="c5"><small>Hum (%)</small></th>
-                <th scope="col" class="c6"><small>BaroPress (kPa)</small></th>
-                <th scope="col" class="c7"><small>tVOC (ppb)</small></th>
-                <th scope="col" class="c8"><small>eCO2 (ppm)</small></th>
-              </tr>
+              <!-- <tr class="data-indoor hide">
+                <th class="time"><small>Time</small></th>
+                <th class="c1"><small>PM 1.0 (ug/m3)</small></th>
+                <th class="c2"><small>PM 2.5 (ug/m3)</small></th>
+                <th class="c3"><small>PM 10.0 (ug/m3)</small></th>
+                <th class="c4"><small>Temp (℃)</small></th>
+                <th class="c5"><small>Hum (%)</small></th>
+                <th class="c6"><small>BaroPress (kPa)</small></th>
+                <th class="c7"><small>tVOC (ppb)</small></th>
+                <th class="c8"><small>eCO2 (ppm)</small></th>
+              </tr> -->
             </thead>
             <tbody class="table-striped table-hover data-body">
             </tbody>
@@ -400,8 +407,13 @@ include('src/data.php');
   <script src="assets/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
   <script src="https://cdn.staticfile.org/datepicker/0.6.5/datepicker.min.js"></script>
   <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu9-9wDg-qNZJ1pyhIMzF306E6roCoKMw&callback=initMap"></script>

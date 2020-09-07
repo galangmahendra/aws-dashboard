@@ -1,16 +1,7 @@
 
 var map;
 var default_data = [];
-default_data['outdoor'] = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>'
-        + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>';
+default_data['outdoor'] = '<tr><td colspan="13"><div class="spinner-border" role="status"></div></td></tr>';
 default_data['indoor'] = '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
         + '<tr><td class="time">0000-00-00 00:00:00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>'
@@ -94,6 +85,19 @@ function setData(location, lat, lon, scope){ // generate data view
             }
             i++ 
         });
+            $('.dtable').DataTable( {
+                pageLength : 250,
+                dom: 'Bf',
+                "bFilter": false,
+                buttons: [
+                    'excelHtml5',
+                    {
+                        extend: 'pdfHtml5',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL'
+                    }
+                ]
+            } );
     })
 
     var infowindow = new google.maps.InfoWindow({content: 'Weather Station ' + location});
