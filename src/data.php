@@ -49,6 +49,16 @@ $data = [
         'lon' => '112.641301',
         'scope' => '',
         'btn-state' => 'disabled'
+    ),
+    array(
+        'id' => '11111',
+        'name' => 'Indragiri',
+        'timezone' => 'MLG',
+        'state' => 'Offline',
+        'lat' => '-7.958591',
+        'lon' => '112.641301',
+        'scope' => '',
+        'btn-state' => 'disabled'
     )
 ];
 ?>
