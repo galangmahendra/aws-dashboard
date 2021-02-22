@@ -15,10 +15,10 @@ include('src/data.php');
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="assets/favicon.ico">
   <title>Enygma AWS</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdn.staticfile.org/datepicker/0.6.5/datepicker.min.css">
-  <link rel=stylesheet href=https://cdn.staticfile.org/font-awesome/5.7.2/css/all.min.css>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body onload="$('.dataview-0000000250').click()">
